@@ -124,6 +124,79 @@
             transform: scale(1.2);
         }
         
+        /* Team Carousel Styles */
+        .team-carousel .carousel-inner {
+            padding: 20px 0;
+        }
+        
+        .team-carousel .carousel-item {
+            transition: transform 0.6s ease-in-out;
+        }
+        
+        .team-carousel .carousel-item.active,
+        .team-carousel .carousel-item-next,
+        .team-carousel .carousel-item-prev {
+            display: flex;
+        }
+        
+        .team-carousel .carousel-item-next,
+        .team-carousel .carousel-item-prev {
+            position: relative;
+            transform: translate3d(0, 0, 0);
+        }
+        
+        .team-carousel .carousel-item-next.carousel-item-left,
+        .team-carousel .carousel-item-prev.carousel-item-right {
+            transform: translate3d(0, 0, 0);
+        }
+        
+        .team-carousel .carousel-item-next,
+        .team-carousel .active.carousel-item-right {
+            transform: translate3d(33.33%, 0, 0);
+        }
+        
+        .team-carousel .carousel-item-prev,
+        .team-carousel .active.carousel-item-left {
+            transform: translate3d(-33.33%, 0, 0);
+        }
+        
+        .team-carousel .carousel-control-prev,
+        .team-carousel .carousel-control-next {
+            width: 5%;
+            background: rgba(0,0,0,0.1);
+            border-radius: 50%;
+            height: 50px;
+            width: 50px;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 1;
+        }
+        
+        .team-carousel .carousel-control-prev-icon,
+        .team-carousel .carousel-control-next-icon {
+            background-size: 100%, 100%;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+        }
+        
+        .team-carousel .carousel-indicators {
+            bottom: -50px;
+        }
+        
+        .team-carousel .carousel-indicators button {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            opacity: 0.5;
+        }
+        
+        .team-carousel .carousel-indicators button.active {
+            opacity: 1;
+        }
+        
         @media (max-width: 768px) {
             .hero-content {
                 text-align: center;
@@ -131,6 +204,13 @@
             
             .hero-image {
                 margin-top: 2rem;
+            }
+            
+            .team-carousel .carousel-inner .carousel-item > div {
+                display: none;
+            }
+            .team-carousel .carousel-inner .carousel-item > div:first-child {
+                display: block;
             }
         }
     </style>
@@ -337,7 +417,7 @@
         </div>
     </section>
 
-    <!-- Team Section -->
+    <!-- Team Section with Carousel -->
     <section id="team" class="py-5 bg-white">
         <div class="container py-5">
             <div class="row justify-content-center">
@@ -348,46 +428,116 @@
                 </div>
             </div>
             
-            <div class="row g-4 justify-content-center">
-                <div class="col-md-6 col-lg-4">
-                    <div class="card team-card p-4 text-center h-100">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Juan Pérez" class="team-img mb-4">
-                        <h3>Juan Pérez</h3>
-                        <p class="text-muted mb-3">Ingeniero Financiero</p>
-                        <p class="mb-4">Especialista en modelos de valuación de bonos y análisis de riesgo crediticio con más de 8 años de experiencia en mercados de capitales.</p>
-                        <ul class="team-social">
-                            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-                            <li><a href="#"><i class="fab fa-github"></i></a></li>
-                            <li><a href="#"><i class="fas fa-envelope"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-4">
-                    <div class="card team-card p-4 text-center h-100">
-                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="María Gómez" class="team-img mb-4">
-                        <h3>María Gómez</h3>
-                        <p class="text-muted mb-3">Desarrolladora Full Stack</p>
-                        <p class="mb-4">Experta en desarrollo de aplicaciones financieras con tecnologías modernas como React, Node.js y Python para análisis numérico.</p>
-                        <ul class="team-social">
-                            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-                            <li><a href="#"><i class="fab fa-github"></i></a></li>
-                            <li><a href="#"><i class="fas fa-envelope"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-4">
-                    <div class="card team-card p-4 text-center h-100">
-                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Carlos Rodríguez" class="team-img mb-4">
-                        <h3>Carlos Rodríguez</h3>
-                        <p class="text-muted mb-3">Experto en UX/UI</p>
-                        <p class="mb-4">Diseñador de interfaces especializado en aplicaciones complejas, enfocado en hacer accesible el análisis financiero avanzado.</p>
-                        <ul class="team-social">
-                            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-                            <li><a href="#"><i class="fab fa-github"></i></a></li>
-                            <li><a href="#"><i class="fas fa-envelope"></i></a></li>
-                        </ul>
+            <div class="row">
+                <div class="col-12">
+                    <div id="teamCarousel" class="carousel slide team-carousel" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <!-- First Slide (3 profiles) -->
+                            <div class="carousel-item active">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="card team-card p-4 text-center h-100">
+                                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Juan Pérez" class="team-img mb-4">
+                                            <h3>Juan Pérez</h3>
+                                            <p class="text-muted mb-3">Ingeniero Financiero</p>
+                                            <p class="mb-4">Especialista en modelos de valuación de bonos y análisis de riesgo crediticio con más de 8 años de experiencia en mercados de capitales.</p>
+                                            <ul class="team-social">
+                                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-github"></i></a></li>
+                                                <li><a href="#"><i class="fas fa-envelope"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card team-card p-4 text-center h-100">
+                                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="María Gómez" class="team-img mb-4">
+                                            <h3>María Gómez</h3>
+                                            <p class="text-muted mb-3">Desarrolladora Full Stack</p>
+                                            <p class="mb-4">Experta en desarrollo de aplicaciones financieras con tecnologías modernas como React, Node.js y Python para análisis numérico.</p>
+                                            <ul class="team-social">
+                                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-github"></i></a></li>
+                                                <li><a href="#"><i class="fas fa-envelope"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card team-card p-4 text-center h-100">
+                                            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Carlos Rodríguez" class="team-img mb-4">
+                                            <h3>Carlos Rodríguez</h3>
+                                            <p class="text-muted mb-3">Experto en UX/UI</p>
+                                            <p class="mb-4">Diseñador de interfaces especializado en aplicaciones complejas, enfocado en hacer accesible el análisis financiero avanzado.</p>
+                                            <ul class="team-social">
+                                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-github"></i></a></li>
+                                                <li><a href="#"><i class="fas fa-envelope"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Second Slide (3 profiles) -->
+                            <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="card team-card p-4 text-center h-100">
+                                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Ana Martínez" class="team-img mb-4">
+                                            <h3>Ana Martínez</h3>
+                                            <p class="text-muted mb-3">Especialista en Matemática Financiera</p>
+                                            <p class="mb-4">Doctora en Finanzas Cuantitativas con experiencia en modelado de instrumentos de deuda y derivados financieros.</p>
+                                            <ul class="team-social">
+                                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-github"></i></a></li>
+                                                <li><a href="#"><i class="fas fa-envelope"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card team-card p-4 text-center h-100">
+                                            <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Luis Fernández" class="team-img mb-4">
+                                            <h3>Luis Fernández</h3>
+                                            <p class="text-muted mb-3">Arquitecto de Software</p>
+                                            <p class="mb-4">Responsable de la infraestructura técnica y escalabilidad de la plataforma, con experiencia en sistemas distribuidos.</p>
+                                            <ul class="team-social">
+                                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-github"></i></a></li>
+                                                <li><a href="#"><i class="fas fa-envelope"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card team-card p-4 text-center h-100">
+                                            <img src="https://randomuser.me/api/portraits/women/90.jpg" alt="Sofía Ramírez" class="team-img mb-4">
+                                            <h3>Sofía Ramírez</h3>
+                                            <p class="text-muted mb-3">Líder de Proyecto</p>
+                                            <p class="mb-4">PMO certificada con experiencia en gestión de proyectos fintech y coordinación de equipos multidisciplinarios.</p>
+                                            <ul class="team-social">
+                                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-github"></i></a></li>
+                                                <li><a href="#"><i class="fas fa-envelope"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Carousel Controls -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#teamCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#teamCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                        
+                        <!-- Carousel Indicators -->
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -648,5 +798,25 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Initialize carousel with custom settings
+        document.addEventListener('DOMContentLoaded', function() {
+            var teamCarousel = document.getElementById('teamCarousel');
+            var carousel = new bootstrap.Carousel(teamCarousel, {
+                interval: 5000, // Change slide every 5 seconds
+                wrap: true,
+                touch: true
+            });
+            
+            // Pause on hover
+            teamCarousel.addEventListener('mouseenter', function() {
+                carousel.pause();
+            });
+            
+            teamCarousel.addEventListener('mouseleave', function() {
+                carousel.cycle();
+            });
+        });
+    </script>
 </body>
 </html>
