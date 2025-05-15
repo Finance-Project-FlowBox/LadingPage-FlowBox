@@ -1,1 +1,822 @@
-deepseek_html_20250515_c62226.html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flow Box - Análisis de Bonos Corporativos</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-primary:hover {
+            background-color: #1a252f;
+            border-color: #1a252f;
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+        
+        .feature-card {
+            border: none;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+        
+        .icon-container {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            background-color: rgba(44, 62, 80, 0.1);
+        }
+        
+        .testimonial-card {
+            border-radius: 10px;
+            border: 1px solid #e5e7eb;
+        }
+        
+        .footer {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .highlight-box {
+            border-left: 4px solid var(--secondary-color);
+            background-color: rgba(52, 152, 219, 0.05);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        /* Team Section Styles */
+        .team-card {
+            border: none;
+            border-radius: 10px;
+            transition: all 0.3s;
+            overflow: hidden;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .team-img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid var(--secondary-color);
+            margin: 0 auto;
+        }
+        
+        .team-social {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .team-social a {
+            color: var(--primary-color);
+            transition: all 0.3s;
+        }
+        
+        .team-social a:hover {
+            color: var(--secondary-color);
+            transform: scale(1.2);
+        }
+        
+        /* Team Carousel Styles */
+        .team-carousel .carousel-inner {
+            padding: 20px 0;
+        }
+        
+        .team-carousel .carousel-item {
+            transition: transform 0.6s ease-in-out;
+        }
+        
+        .team-carousel .carousel-item.active,
+        .team-carousel .carousel-item-next,
+        .team-carousel .carousel-item-prev {
+            display: flex;
+        }
+        
+        .team-carousel .carousel-item-next,
+        .team-carousel .carousel-item-prev {
+            position: relative;
+            transform: translate3d(0, 0, 0);
+        }
+        
+        .team-carousel .carousel-item-next.carousel-item-left,
+        .team-carousel .carousel-item-prev.carousel-item-right {
+            transform: translate3d(0, 0, 0);
+        }
+        
+        .team-carousel .carousel-item-next,
+        .team-carousel .active.carousel-item-right {
+            transform: translate3d(33.33%, 0, 0);
+        }
+        
+        .team-carousel .carousel-item-prev,
+        .team-carousel .active.carousel-item-left {
+            transform: translate3d(-33.33%, 0, 0);
+        }
+        
+        .team-carousel .carousel-control-prev,
+        .team-carousel .carousel-control-next {
+            width: 5%;
+            background: rgba(0,0,0,0.1);
+            border-radius: 50%;
+            height: 50px;
+            width: 50px;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 1;
+        }
+        
+        .team-carousel .carousel-control-prev-icon,
+        .team-carousel .carousel-control-next-icon {
+            background-size: 100%, 100%;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+        }
+        
+        .team-carousel .carousel-indicators {
+            bottom: -50px;
+        }
+        
+        .team-carousel .carousel-indicators button {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            opacity: 0.5;
+        }
+        
+        .team-carousel .carousel-indicators button.active {
+            opacity: 1;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content {
+                text-align: center;
+            }
+            
+            .hero-image {
+                margin-top: 2rem;
+            }
+            
+            .team-carousel .carousel-inner .carousel-item > div {
+                display: none;
+            }
+            .team-carousel .carousel-inner .carousel-item > div:first-child {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top py-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <span style="color: var(--secondary-color);">Flow</span><span style="color: var(--primary-color);">Box</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Características</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#benefits">Beneficios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#how-it-works">Cómo Funciona</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#team">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pricing">Planes</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="#" class="btn btn-outline-secondary me-2">Iniciar Sesión</a>
+                    <a href="#" class="btn btn-primary">Registrarse</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient py-5">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-content">
+                    <h1 class="display-4 fw-bold mb-4">Análisis avanzado de bonos corporativos</h1>
+                    <p class="lead mb-4">Flow Box es la solución web para proyección de flujo de caja de bonos con método de amortización americano, incluyendo períodos de gracia parciales o totales.</p>
+                    <div class="d-flex flex-wrap gap-2">
+                        <a href="#demo" class="btn btn-primary btn-lg px-4">Ver Demo</a>
+                        <a href="#pricing" class="btn btn-secondary btn-lg px-4">Planes y Precios</a>
+                    </div>
+                    <div class="mt-4 d-flex align-items-center justify-content-center justify-content-lg-start">
+                        <div class="d-flex">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" class="rounded-circle border border-3 border-white" width="40" height="40" style="margin-right: -10px;">
+                            <img src="https://randomuser.me/api/portraits/men/44.jpg" class="rounded-circle border border-3 border-white" width="40" height="40" style="margin-right: -10px;">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" class="rounded-circle border border-3 border-white" width="40" height="40">
+                        </div>
+                        <div class="ms-3">
+                            <p class="mb-0 small fw-bold">Utilizado por instituciones financieras y académicas</p>
+                            <div class="text-warning">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span class="text-dark ms-1">4.7/5</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 hero-image">
+                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Dashboard financiero" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-5 bg-white">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center mb-5">
+                    <span class="badge bg-primary bg-opacity-10 text-primary mb-3">CARACTERÍSTICAS</span>
+                    <h2 class="fw-bold mb-3">Indicadores financieros clave</h2>
+                    <p class="text-muted">Flow Box calcula automáticamente los principales indicadores para análisis de bonos corporativos</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card feature-card p-4">
+                        <div class="icon-container">
+                            <i class="fas fa-percentage fa-lg" style="color: var(--primary-color);"></i>
+                        </div>
+                        <h3>TCEA y TREA</h3>
+                        <p class="text-muted">Tasa de Costo Efectivo Anual (emisor) y Tasa de Rendimiento Efectivo Anual (inversionista).</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="card feature-card p-4">
+                        <div class="icon-container">
+                            <i class="fas fa-chart-line fa-lg" style="color: var(--primary-color);"></i>
+                        </div>
+                        <h3>Duración y Convexidad</h3>
+                        <p class="text-muted">Medidas de sensibilidad del precio del bono ante cambios en las tasas de interés.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="card feature-card p-4">
+                        <div class="icon-container">
+                            <i class="fas fa-dollar-sign fa-lg" style="color: var(--primary-color);"></i>
+                        </div>
+                        <h3>Precio de Mercado</h3>
+                        <p class="text-muted">Cálculo del precio máximo que el mercado estaría dispuesto a pagar por el bono.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-lg-6">
+                    <div class="highlight-box">
+                        <h4 class="fw-bold mb-3">Método de Amortización Americano</h4>
+                        <p>Flow Box implementa el método de amortización americano, contemplando opciones de períodos de gracia parciales o totales, proporcionando flexibilidad en el análisis de diferentes estructuras de bonos.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="highlight-box">
+                        <h4 class="fw-bold mb-3">Configuración Flexible</h4>
+                        <p>Selección de moneda y definición del tipo de tasa de interés (efectiva o nominal), con especificación de frecuencia de capitalización cuando corresponde.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-5 bg-light">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center mb-5">
+                    <span class="badge bg-primary bg-opacity-10 text-primary mb-3">FUNCIONALIDAD</span>
+                    <h2 class="fw-bold mb-3">Cómo funciona Flow Box</h2>
+                </div>
+            </div>
+            
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Interfaz de Flow Box" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-lg-6">
+                    <div class="ps-lg-5">
+                        <div class="d-flex mb-4">
+                            <div class="me-4">
+                                <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                    <span class="fw-bold">1</span>
+                                </div>
+                            </div>
+                            <div>
+                                <h4>Registro y Autenticación</h4>
+                                <p>Acceso seguro mediante usuario y contraseña para proteger tus datos financieros.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex mb-4">
+                            <div class="me-4">
+                                <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                    <span class="fw-bold">2</span>
+                                </div>
+                            </div>
+                            <div>
+                                <h4>Creación de Valoraciones</h4>
+                                <p>Registro de nuevas valoraciones de bonos con ingreso completo de datos requeridos.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex mb-4">
+                            <div class="me-4">
+                                <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                    <span class="fw-bold">3</span>
+                                </div>
+                            </div>
+                            <div>
+                                <h4>Gestión de Datos</h4>
+                                <p>Edición, actualización y almacenamiento de las valoraciones existentes.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex">
+                            <div class="me-4">
+                                <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                    <span class="fw-bold">4</span>
+                                </div>
+                            </div>
+                            <div>
+                                <h4>Análisis y Reportes</h4>
+                                <p>Generación automática de indicadores financieros y reportes personalizables.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section with Carousel -->
+    <section id="team" class="py-5 bg-white">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center mb-5">
+                    <span class="badge bg-primary bg-opacity-10 text-primary mb-3">EQUIPO</span>
+                    <h2 class="fw-bold mb-3">Conoce al equipo detrás de Flow Box</h2>
+                    <p class="text-muted">Un grupo multidisciplinario de profesionales apasionados por las finanzas y la tecnología</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-12">
+                    <div id="teamCarousel" class="carousel slide team-carousel" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <!-- First Slide (3 profiles) -->
+                            <div class="carousel-item active">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="card team-card p-4 text-center h-100">
+                                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Juan Pérez" class="team-img mb-4">
+                                            <h3>Juan Pérez</h3>
+                                            <p class="text-muted mb-3">Ingeniero Financiero</p>
+                                            <p class="mb-4">Especialista en modelos de valuación de bonos y análisis de riesgo crediticio con más de 8 años de experiencia en mercados de capitales.</p>
+                                            <ul class="team-social">
+                                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-github"></i></a></li>
+                                                <li><a href="#"><i class="fas fa-envelope"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card team-card p-4 text-center h-100">
+                                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="María Gómez" class="team-img mb-4">
+                                            <h3>María Gómez</h3>
+                                            <p class="text-muted mb-3">Desarrolladora Full Stack</p>
+                                            <p class="mb-4">Experta en desarrollo de aplicaciones financieras con tecnologías modernas como React, Node.js y Python para análisis numérico.</p>
+                                            <ul class="team-social">
+                                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-github"></i></a></li>
+                                                <li><a href="#"><i class="fas fa-envelope"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card team-card p-4 text-center h-100">
+                                            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Carlos Rodríguez" class="team-img mb-4">
+                                            <h3>Carlos Rodríguez</h3>
+                                            <p class="text-muted mb-3">Experto en UX/UI</p>
+                                            <p class="mb-4">Diseñador de interfaces especializado en aplicaciones complejas, enfocado en hacer accesible el análisis financiero avanzado.</p>
+                                            <ul class="team-social">
+                                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-github"></i></a></li>
+                                                <li><a href="#"><i class="fas fa-envelope"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Second Slide (3 profiles) -->
+                            <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="card team-card p-4 text-center h-100">
+                                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Ana Martínez" class="team-img mb-4">
+                                            <h3>Ana Martínez</h3>
+                                            <p class="text-muted mb-3">Especialista en Matemática Financiera</p>
+                                            <p class="mb-4">Doctora en Finanzas Cuantitativas con experiencia en modelado de instrumentos de deuda y derivados financieros.</p>
+                                            <ul class="team-social">
+                                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-github"></i></a></li>
+                                                <li><a href="#"><i class="fas fa-envelope"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card team-card p-4 text-center h-100">
+                                            <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Luis Fernández" class="team-img mb-4">
+                                            <h3>Luis Fernández</h3>
+                                            <p class="text-muted mb-3">Arquitecto de Software</p>
+                                            <p class="mb-4">Responsable de la infraestructura técnica y escalabilidad de la plataforma, con experiencia en sistemas distribuidos.</p>
+                                            <ul class="team-social">
+                                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-github"></i></a></li>
+                                                <li><a href="#"><i class="fas fa-envelope"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card team-card p-4 text-center h-100">
+                                            <img src="https://randomuser.me/api/portraits/women/90.jpg" alt="Sofía Ramírez" class="team-img mb-4">
+                                            <h3>Sofía Ramírez</h3>
+                                            <p class="text-muted mb-3">Líder de Proyecto</p>
+                                            <p class="mb-4">PMO certificada con experiencia en gestión de proyectos fintech y coordinación de equipos multidisciplinarios.</p>
+                                            <ul class="team-social">
+                                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-github"></i></a></li>
+                                                <li><a href="#"><i class="fas fa-envelope"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Carousel Controls -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#teamCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#teamCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                        
+                        <!-- Carousel Indicators -->
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <div class="highlight-box">
+                        <h3 class="fw-bold mb-3">Nuestra Misión</h3>
+                        <p>Flow Box nació de la necesidad de combinar conocimientos avanzados de ingeniería económica y matemática financiera con tecnología web moderna. Nuestro objetivo es democratizar el acceso a herramientas profesionales de análisis de bonos, tanto para entornos académicos como corporativos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-5 bg-white">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center mb-5">
+                    <span class="badge bg-primary bg-opacity-10 text-primary mb-3">BENEFICIOS</span>
+                    <h2 class="fw-bold mb-3">¿Por qué elegir Flow Box?</h2>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card feature-card p-4 h-100">
+                        <div class="icon-container">
+                            <i class="fas fa-globe fa-lg" style="color: var(--primary-color);"></i>
+                        </div>
+                        <h3>Acceso Universal</h3>
+                        <p class="text-muted">Plataforma web accesible desde cualquier navegador sin necesidad de instalación.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="card feature-card p-4 h-100">
+                        <div class="icon-container">
+                            <i class="fas fa-sliders-h fa-lg" style="color: var(--primary-color);"></i>
+                        </div>
+                        <h3>Escenarios Múltiples</h3>
+                        <p class="text-muted">Gestión de diferentes escenarios de bonos para comparación y análisis.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="card feature-card p-4 h-100">
+                        <div class="icon-container">
+                            <i class="fas fa-graduation-cap fa-lg" style="color: var(--primary-color);"></i>
+                        </div>
+                        <h3>Enfoque Académico</h3>
+                        <p class="text-muted">Ideal para enseñanza de ingeniería económica y matemática financiera.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="card feature-card p-4 h-100">
+                        <div class="icon-container">
+                            <i class="fas fa-briefcase fa-lg" style="color: var(--primary-color);"></i>
+                        </div>
+                        <h3>Uso Empresarial</h3>
+                        <p class="text-muted">Solución profesional para análisis de bonos en contextos corporativos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="py-5 bg-light">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <span class="badge bg-primary bg-opacity-10 text-primary mb-3">DEMO</span>
+                    <h2 class="fw-bold mb-3">Vea Flow Box en acción</h2>
+                    <p class="text-muted mb-4">Nuestro video demostrativo muestra cómo puede analizar bonos corporativos en minutos con nuestra plataforma.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Sin necesidad de registro</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Acceso a todas las funciones</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Ejemplo práctico incluido</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary mt-3">Ver Video Demo</a>
+                </div>
+                <div class="col-lg-6">
+                    <div class="ratio ratio-16x9">
+                        <iframe class="rounded shadow" src="https://www.youtube.com/embed/9No-FiEInLA" title="Demo Flow Box" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-5 bg-white">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center mb-5">
+                    <span class="badge bg-primary bg-opacity-10 text-primary mb-3">PLANES</span>
+                    <h2 class="fw-bold mb-3">Planes adaptados a tus necesidades</h2>
+                    <p class="text-muted">Elige el plan que mejor se ajuste a tus requerimientos académicos o profesionales.</p>
+                </div>
+            </div>
+            
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4">
+                    <div class="card h-100 p-4">
+                        <div class="card-body">
+                            <h3 class="fw-bold">Estudiante</h3>
+                            <p class="text-muted">Perfecto para proyectos académicos</p>
+                            <div class="my-4">
+                                <span class="display-4 fw-bold">$9</span>
+                                <span class="text-muted">/mes</span>
+                            </div>
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> 5 análisis mensuales</li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Acceso a todos los indicadores</li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Soporte por correo electrónico</li>
+                                <li class="mb-2 text-muted"><i class="fas fa-times me-2"></i> Exportación de reportes</li>
+                                <li class="text-muted"><i class="fas fa-times me-2"></i> Soporte prioritario</li>
+                            </ul>
+                            <a href="#" class="btn btn-outline-primary w-100">Seleccionar</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="card h-100 p-4 border-2 border-primary">
+                        <div class="card-body">
+                            <div class="text-end mb-2">
+                                <span class="badge bg-primary">Más Popular</span>
+                            </div>
+                            <h3 class="fw-bold">Profesional</h3>
+                            <p class="text-muted">Para analistas financieros independientes</p>
+                            <div class="my-4">
+                                <span class="display-4 fw-bold">$29</span>
+                                <span class="text-muted">/mes</span>
+                            </div>
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> 20 análisis mensuales</li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Exportación de reportes (PDF)</li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Soporte por chat</li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Comparación de escenarios</li>
+                                <li class="text-muted"><i class="fas fa-times me-2"></i> Soporte prioritario</li>
+                            </ul>
+                            <a href="#" class="btn btn-primary w-100">Seleccionar</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="card h-100 p-4">
+                        <div class="card-body">
+                            <h3 class="fw-bold">Empresarial</h3>
+                            <p class="text-muted">Para instituciones financieras y educativas</p>
+                            <div class="my-4">
+                                <span class="display-4 fw-bold">$99</span>
+                                <span class="text-muted">/mes</span>
+                            </div>
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Análisis ilimitados</li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Exportación múltiple (PDF, Excel)</li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Soporte prioritario 24/7</li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Usuarios múltiples</li>
+                                <li><i class="fas fa-check text-primary me-2"></i> Capacitación incluida</li>
+                            </ul>
+                            <a href="#" class="btn btn-outline-primary w-100">Contactar Ventas</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="fw-bold mb-4">¿Listo para optimizar tu análisis de bonos?</h2>
+                    <p class="lead mb-5">Únete a instituciones académicas y financieras que ya usan Flow Box para sus proyecciones de flujo de caja.</p>
+                    <div class="d-flex flex-wrap justify-content-center gap-3">
+                        <a href="#" class="btn btn-light btn-lg px-4">Registrarse Gratis</a>
+                        <a href="#" class="btn btn-outline-light btn-lg px-4">Solicitar Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h3 class="text-white mb-4">
+                        <span style="color: var(--secondary-color);">Flow</span><span>Box</span>
+                    </h3>
+                    <p class="text-muted">Solución web para proyección de flujo de caja de bonos corporativos con método de amortización americano.</p>
+                    <div class="mt-4">
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-6 col-md-3 col-lg-2 mb-4 mb-md-0">
+                    <h5 class="text-white mb-4">Producto</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Características</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Planes</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Demo</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none">Actualizaciones</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-6 col-md-3 col-lg-2 mb-4 mb-md-0">
+                    <h5 class="text-white mb-4">Recursos</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Documentación</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Guías</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Blog</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-6 col-md-3 col-lg-2 mb-4 mb-md-0">
+                    <h5 class="text-white mb-4">Legal</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Privacidad</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Términos</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Seguridad</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-6 col-md-3 col-lg-2">
+                    <h5 class="text-white mb-4">Contacto</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Soporte</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Ventas</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <hr class="my-5 bg-gray-700">
+            
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="text-muted mb-0">&copy; 2023 Flow Box. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="text-muted mb-0">Integrando ingeniería económica, matemática financiera y desarrollo web</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Initialize carousel with custom settings
+        document.addEventListener('DOMContentLoaded', function() {
+            var teamCarousel = document.getElementById('teamCarousel');
+            var carousel = new bootstrap.Carousel(teamCarousel, {
+                interval: 5000, // Change slide every 5 seconds
+                wrap: true,
+                touch: true
+            });
+            
+            // Pause on hover
+            teamCarousel.addEventListener('mouseenter', function() {
+                carousel.pause();
+            });
+            
+            teamCarousel.addEventListener('mouseleave', function() {
+                carousel.cycle();
+            });
+        });
+    </script>
+</body>
+</html>
