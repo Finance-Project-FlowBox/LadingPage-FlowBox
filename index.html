@@ -1,12 +1,10 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flow Box - Análisis de Bonos Corporativos</title>
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -216,7 +214,6 @@
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light sticky-top py-3">
         <div class="container">
             <a class="navbar-brand fw-bold" href="#">
@@ -244,14 +241,13 @@
                     </li>
                 </ul>
                 <div class="d-flex">
-                    <a href="#" class="btn btn-outline-secondary me-2">Iniciar Sesión</a>
-                    <a href="#" class="btn btn-primary">Registrarse</a>
+                    <a href="https://analizador-bonos-corporativos.netlify.app/" class="btn btn-outline-secondary me-2">Iniciar Sesión</a>
+                    <a href="https://analizador-bonos-corporativos-online.netlify.app/" class="btn btn-primary">Registrarse</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero-gradient py-5">
         <div class="container py-5">
             <div class="row align-items-center">
@@ -288,7 +284,6 @@
         </div>
     </section>
 
-    <!-- Features Section -->
     <section id="features" class="py-5 bg-white">
         <div class="container py-5">
             <div class="row justify-content-center">
@@ -348,7 +343,6 @@
         </div>
     </section>
 
-    <!-- How It Works Section -->
     <section id="how-it-works" class="py-5 bg-light">
         <div class="container py-5">
             <div class="row justify-content-center">
@@ -417,7 +411,6 @@
         </div>
     </section>
 
-    <!-- Team Section with Carousel -->
     <section id="team" class="py-5 bg-white">
         <div class="container py-5">
             <div class="row justify-content-center">
@@ -432,7 +425,6 @@
                 <div class="col-12">
                     <div id="teamCarousel" class="carousel slide team-carousel" data-bs-ride="carousel">
                         <div class="carousel-inner">
-                            <!-- First Slide (3 profiles) -->
                             <div class="carousel-item active">
                                 <div class="row">
                                     <div class="col-md-4">
@@ -477,7 +469,6 @@
                                 </div>
                             </div>
                             
-                            <!-- Second Slide (3 profiles) -->
                             <div class="carousel-item">
                                 <div class="row">
                                     <div class="col-md-4">
@@ -523,7 +514,6 @@
                             </div>
                         </div>
                         
-                        <!-- Carousel Controls -->
                         <button class="carousel-control-prev" type="button" data-bs-target="#teamCarousel" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
@@ -533,7 +523,6 @@
                             <span class="visually-hidden">Next</span>
                         </button>
                         
-                        <!-- Carousel Indicators -->
                         <div class="carousel-indicators">
                             <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                             <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -553,7 +542,6 @@
         </div>
     </section>
 
-    <!-- Benefits Section -->
     <section id="benefits" class="py-5 bg-white">
         <div class="container py-5">
             <div class="row justify-content-center">
@@ -607,7 +595,6 @@
         </div>
     </section>
 
-    <!-- Demo Section -->
     <section id="demo" class="py-5 bg-light">
         <div class="container py-5">
             <div class="row align-items-center">
@@ -626,197 +613,3 @@
                     <div class="ratio ratio-16x9">
                         <iframe class="rounded shadow" src="https://www.youtube.com/embed/9No-FiEInLA" title="Demo Flow Box" allowfullscreen></iframe>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section id="pricing" class="py-5 bg-white">
-        <div class="container py-5">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center mb-5">
-                    <span class="badge bg-primary bg-opacity-10 text-primary mb-3">PLANES</span>
-                    <h2 class="fw-bold mb-3">Planes adaptados a tus necesidades</h2>
-                    <p class="text-muted">Elige el plan que mejor se ajuste a tus requerimientos académicos o profesionales.</p>
-                </div>
-            </div>
-            
-            <div class="row g-4 justify-content-center">
-                <div class="col-lg-4">
-                    <div class="card h-100 p-4">
-                        <div class="card-body">
-                            <h3 class="fw-bold">Estudiante</h3>
-                            <p class="text-muted">Perfecto para proyectos académicos</p>
-                            <div class="my-4">
-                                <span class="display-4 fw-bold">$9</span>
-                                <span class="text-muted">/mes</span>
-                            </div>
-                            <ul class="list-unstyled mb-4">
-                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> 5 análisis mensuales</li>
-                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Acceso a todos los indicadores</li>
-                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Soporte por correo electrónico</li>
-                                <li class="mb-2 text-muted"><i class="fas fa-times me-2"></i> Exportación de reportes</li>
-                                <li class="text-muted"><i class="fas fa-times me-2"></i> Soporte prioritario</li>
-                            </ul>
-                            <a href="#" class="btn btn-outline-primary w-100">Seleccionar</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4">
-                    <div class="card h-100 p-4 border-2 border-primary">
-                        <div class="card-body">
-                            <div class="text-end mb-2">
-                                <span class="badge bg-primary">Más Popular</span>
-                            </div>
-                            <h3 class="fw-bold">Profesional</h3>
-                            <p class="text-muted">Para analistas financieros independientes</p>
-                            <div class="my-4">
-                                <span class="display-4 fw-bold">$29</span>
-                                <span class="text-muted">/mes</span>
-                            </div>
-                            <ul class="list-unstyled mb-4">
-                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> 20 análisis mensuales</li>
-                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Exportación de reportes (PDF)</li>
-                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Soporte por chat</li>
-                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Comparación de escenarios</li>
-                                <li class="text-muted"><i class="fas fa-times me-2"></i> Soporte prioritario</li>
-                            </ul>
-                            <a href="#" class="btn btn-primary w-100">Seleccionar</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4">
-                    <div class="card h-100 p-4">
-                        <div class="card-body">
-                            <h3 class="fw-bold">Empresarial</h3>
-                            <p class="text-muted">Para instituciones financieras y educativas</p>
-                            <div class="my-4">
-                                <span class="display-4 fw-bold">$99</span>
-                                <span class="text-muted">/mes</span>
-                            </div>
-                            <ul class="list-unstyled mb-4">
-                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Análisis ilimitados</li>
-                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Exportación múltiple (PDF, Excel)</li>
-                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Soporte prioritario 24/7</li>
-                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Usuarios múltiples</li>
-                                <li><i class="fas fa-check text-primary me-2"></i> Capacitación incluida</li>
-                            </ul>
-                            <a href="#" class="btn btn-outline-primary w-100">Contactar Ventas</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="py-5 bg-primary text-white">
-        <div class="container py-5">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <h2 class="fw-bold mb-4">¿Listo para optimizar tu análisis de bonos?</h2>
-                    <p class="lead mb-5">Únete a instituciones académicas y financieras que ya usan Flow Box para sus proyecciones de flujo de caja.</p>
-                    <div class="d-flex flex-wrap justify-content-center gap-3">
-                        <a href="#" class="btn btn-light btn-lg px-4">Registrarse Gratis</a>
-                        <a href="#" class="btn btn-outline-light btn-lg px-4">Solicitar Demo</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer py-5">
-        <div class="container py-4">
-            <div class="row">
-                <div class="col-lg-4 mb-5 mb-lg-0">
-                    <h3 class="text-white mb-4">
-                        <span style="color: var(--secondary-color);">Flow</span><span>Box</span>
-                    </h3>
-                    <p class="text-muted">Solución web para proyección de flujo de caja de bonos corporativos con método de amortización americano.</p>
-                    <div class="mt-4">
-                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-white me-3"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="text-white"><i class="fab fa-github"></i></a>
-                    </div>
-                </div>
-                
-                <div class="col-6 col-md-3 col-lg-2 mb-4 mb-md-0">
-                    <h5 class="text-white mb-4">Producto</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Características</a></li>
-                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Planes</a></li>
-                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Demo</a></li>
-                        <li><a href="#" class="text-muted text-decoration-none">Actualizaciones</a></li>
-                    </ul>
-                </div>
-                
-                <div class="col-6 col-md-3 col-lg-2 mb-4 mb-md-0">
-                    <h5 class="text-white mb-4">Recursos</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Documentación</a></li>
-                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Guías</a></li>
-                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Blog</a></li>
-                        <li><a href="#" class="text-muted text-decoration-none">FAQ</a></li>
-                    </ul>
-                </div>
-                
-                <div class="col-6 col-md-3 col-lg-2 mb-4 mb-md-0">
-                    <h5 class="text-white mb-4">Legal</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Privacidad</a></li>
-                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Términos</a></li>
-                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Seguridad</a></li>
-                    </ul>
-                </div>
-                
-                <div class="col-6 col-md-3 col-lg-2">
-                    <h5 class="text-white mb-4">Contacto</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Soporte</a></li>
-                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Ventas</a></li>
-                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Twitter</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <hr class="my-5 bg-gray-700">
-            
-            <div class="row">
-                <div class="col-md-6 text-center text-md-start">
-                    <p class="text-muted mb-0">&copy; 2023 Flow Box. Todos los derechos reservados.</p>
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <p class="text-muted mb-0">Integrando ingeniería económica, matemática financiera y desarrollo web</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Initialize carousel with custom settings
-        document.addEventListener('DOMContentLoaded', function() {
-            var teamCarousel = document.getElementById('teamCarousel');
-            var carousel = new bootstrap.Carousel(teamCarousel, {
-                interval: 5000, // Change slide every 5 seconds
-                wrap: true,
-                touch: true
-            });
-            
-            // Pause on hover
-            teamCarousel.addEventListener('mouseenter', function() {
-                carousel.pause();
-            });
-            
-            teamCarousel.addEventListener('mouseleave', function() {
-                carousel.cycle();
-            });
-        });
-    </script>
-</body>
-</html>
